@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.SampleController">
+   <children>
+      <TabPane layoutX="7.0" layoutY="7.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Acceuil">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="74.0" layoutY="248.0" prefHeight="35.0" prefWidth="86.0" text="Temps" textFill="#120e8d" underline="true">
+                           <font>
+                              <Font name="System Bold Italic" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="454.0" layoutY="249.0" prefHeight="34.0" prefWidth="85.0" text="Argent" textFill="#098614" underline="true">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="254.0" layoutY="249.0" prefHeight="34.0" prefWidth="115.0" text="Longueur" textFill="#a8175f" underline="true">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="195.0" layoutY="21.0" text="Convertisseur ">
+                           <font>
+                              <Font name="Avenir Next Condensed Bold" size="40.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#0c7f83" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <Label layoutX="171.0" layoutY="138.0" prefHeight="26.0" prefWidth="265.0" text="Les différents choix à convertir!">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Longeur">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txt1L" layoutX="74.0" layoutY="157.0" onKeyPressed="#verifNum" onKeyReleased="#convert1L" />
+                        <TextField fx:id="txt2L" layoutX="346.0" layoutY="157.0" onKeyPressed="#verifNum" onKeyReleased="#convert2L" />
+                        <ComboBox fx:id="cbo1L" layoutX="79.0" layoutY="226.0" onHidden="#convert2L" prefWidth="150.0" promptText="Choisir l'unité" />
+                        <ComboBox fx:id="cbo2L" layoutX="351.0" layoutY="226.0" onHidden="#convert1L" prefWidth="150.0" promptText="Choisir l'unité" />
+                        <Label layoutX="281.0" layoutY="152.0" text="=">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="223.0" layoutY="36.0" prefHeight="17.0" prefWidth="155.0" text="Longueur" textFill="#a80b0b">
+                           <font>
+                              <Font name="Avenir Next Medium Italic" size="33.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Temps">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txt1T" layoutX="74.0" layoutY="157.0" onKeyPressed="#verifNum" onKeyReleased="#convert1T" />
+                        <TextField fx:id="txt2T" layoutX="346.0" layoutY="157.0" onKeyPressed="#verifNum" onKeyReleased="#convert2T" />
+                        <ComboBox fx:id="cbo1T" layoutX="79.0" layoutY="226.0" onHidden="#convert2T" prefWidth="150.0" promptText="Choisir l'unité" />
+                        <ComboBox fx:id="cbo2T" layoutX="351.0" layoutY="226.0" onHidden="#convert1T" prefWidth="150.0" promptText="Choisir l'unité" />
+                        <Label layoutX="281.0" layoutY="152.0" text="=">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="250.0" layoutY="35.0" text="Temps" textFill="#2896cd">
+                           <font>
+                              <Font name="Avenir Next Medium Italic" size="33.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Monnaie">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txt1M" layoutX="74.0" layoutY="157.0" onKeyReleased="#verifNum" onKeyTyped="#convert1M" />
+                        <TextField fx:id="txt2M" layoutX="346.0" layoutY="157.0" onKeyReleased="#verifNum" onKeyTyped="#convert2M" />
+                        <ComboBox fx:id="cbo1M" layoutX="79.0" layoutY="226.0" onHidden="#convert2M" prefWidth="150.0" promptText="Choisir l'unité" />
+                        <ComboBox fx:id="cbo2M" layoutX="351.0" layoutY="226.0" onHidden="#convert1M" prefWidth="150.0" promptText="Choisir l'unité" />
+                        <Label layoutX="281.0" layoutY="152.0" text="=">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="222.0" layoutY="40.0" prefHeight="40.0" prefWidth="138.0" text="Monnaie" textFill="#1d20b5">
+                           <font>
+                              <Font name="Avenir Next Medium Italic" size="33.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
