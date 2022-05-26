@@ -81,10 +81,14 @@ public class ReglesController implements Initializable{
 		ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
 		reglesTable.setItems(reglesData);
 
-		//showRegles(null);
+		showRegles(null);
+		// Mettre à jour l'affichage d'une femme sélectionnée
+			reglesTable.getSelectionModel().selectedItemProperty().addListener((
+					observable, oldValue, newValue)-> showRegles(newValue));
 
 
 
+			
 	}
 
 	// Ajouter une femme
@@ -129,8 +133,14 @@ public class ReglesController implements Initializable{
 
 		}
 
-
-
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
